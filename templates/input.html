@@ -1,0 +1,163 @@
+
+<html>
+{% load static %}
+<head>
+
+    <title>Knn analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="{% static 'classifier/plugin.css' %}">
+
+<style type="text/css">
+  .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #1abc9c;
+   color: white;
+   text-align: center;
+   height: 44;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid bg-1 text-center">
+  
+  <div class="col-md-6">
+  <img src="{% static 'classifier/img/d1.jpg' %}" id="boxshadow" style="height: 51%">
+<!--<img src="{% static "classifier/img/d1.jpg" %}" alt="something" >
+-->
+  </div>
+  <div class="col-md-6 text-center">
+  <h3>Check whether the person<br> has diabetes or not??
+  </h3>
+  <h3>Using MACHINE LEARNING Algorithm</h3>
+  <img src="{% static 'classifier/img/d2.jpg' %}"/ class="margin" id="boxshadow" width="50%" height="25%" >
+  </div>
+</div>
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'dataset' %}">About Dataset</a></li>
+        <li><a href="{% url 'algorithm' %}">Machine Learning Algorithm</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+
+<div class="panel panel-primary">
+      <div class="panel-heading">Enter Details to test Diabetes result </div>
+      <div class="panel-body">
+<form action="" method="post" class="">
+
+  {% csrf_token %}
+<div class="row">
+<div class="col-sm-3">
+  <div class="form-group">
+     <label for="regular2">Pregnancies</label>
+      {{ form.Pregnancies }}
+     <p> {{ form.Pregnancies.help_text }}</p>
+  </div>
+</div>
+
+<div class="col-sm-3">
+  <div class="form-group">
+       <label for="regular2">Glucose</label>
+      {{ form.Glucose }}
+     <p> {{ form.Glucose.help_text }}</p>
+  </div>
+</div>
+
+<div class="col-sm-3">
+  <div class="form-group">
+        <label for="regular2">BloodPressure</label>
+      {{ form.BloodPressure }}
+     <p> {{ form.BloodPressure.help_text }}</p>
+  </div>
+</div>
+
+<div class="col-sm-3">
+  <div class="form-group">
+      <label for="regular2">SkinThickness</label>
+      {{ form.SkinThickness }}
+     <p>{{ form.SkinThickness.help_text }}</p>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-3">
+  <div class="form-group">
+      <label for="regular2">Insulin</label>
+      {{ form.Insulin }}
+     <p> {{ form.Insulin.help_text }}</p>
+
+  </div>
+</div>
+
+<div class="col-sm-3">
+  <div class="form-group">
+      <label for="regular2">BMI</label>
+      {{ form.BMI }}
+     <p> {{ form.BMI.help_text }}</p>
+        
+  </div>
+</div>
+
+<div class="col-sm-3">
+  <div class="form-group">
+      <label for="regular2">DiabetesPedigreeFunction</label>
+      {{ form.DiabetesPedigreeFunction }}
+     <p> {{ form.DiabetesPedigreeFunction.help_text }}</p>
+
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="form-group">
+        <label for="regular2">Age</label>
+    {{ form.Age }}
+     <p> {{ form.Age.help_text }}</p>
+
+  </div>
+</div>
+
+</div>
+</div>
+<div class="panel-footer text-center">
+<button class="btn btn-primary">Submit</button>    
+</div>
+
+  </div>
+
+
+</form>
+
+</div>
+
+
+<div class="footer" >
+  <p style="padding-top: 10">Designed and implemented by Adhitya Raina</p></div>
+
+
+
+</body></html>
+
+
+
